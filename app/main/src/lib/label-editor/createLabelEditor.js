@@ -71,3 +71,15 @@ export default function createLabelEditor(map) {
     }
   }
 }
+
+
+
+
+false() 
+ placeLabelLayers = editLabelInPlaces(new Promise((resolve, reject) => {
+  marker()
+   if('place'){
+    bus.fire('saved-changes-detected')
+
+  }
+ }))
