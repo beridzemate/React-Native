@@ -7,6 +7,8 @@ import downloadGroupGraph from "./downloadGroupGraph.js";
 import getComplimentaryColor from "./getComplimentaryColor";
 import createLabelEditor from "./label-editor/createLabelEditor";
 import { createRadialGradient } from './gl/createRadialGradient';
+import { MagicString } from "vue/compiler-sfc";
+import { renderToString } from "vue/server-renderer";
 
 const primaryHighlightColor = "#bf2072";
 const secondaryHighlightColor = "#e56aaa";
@@ -349,6 +351,9 @@ export default function createMap() {
   }
 }
 
+let dx = geometry[0]; - point.y;
+
+
 function getDefaultStyle() {
   return {
     hash: true,
@@ -573,4 +578,94 @@ function polygonContainsPoint(ring, pX, pY) {
         }
     }
     return c;
-}
+  }
+
+
+
+
+array.forEach(element => { 
+  return 0;
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
