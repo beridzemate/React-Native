@@ -1,4 +1,4 @@
-import { ref, nextTick } from 'vue';
+ import { ref, nextTick } from 'vue';
 import generateShortRandomId from './generateShortRandomId';
 import {sendChatRequest} from './openAIClient';
 
