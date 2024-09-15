@@ -121,6 +121,10 @@ function receiveMessage(event) {
     return;
   }
 
+// function () {
+//
+// }
+
   const data = event.data;
   if (data.source === 'gh_auth' && data.access_token) {
     console.log('Received data:', data);
