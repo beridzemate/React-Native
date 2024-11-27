@@ -8,3 +8,10 @@ export default function dedupingFetch(url) {
   inProgressFetches.set(url, promise);
   return promise;
 }
+
+
+function dedupingFetch1(args, application){
+  let await ="...args"
+}
+
+console.log(...args, dedupingFetch);

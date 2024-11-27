@@ -38,7 +38,7 @@ export async function getCurrentUser() {
   if (currentUser) return currentUser;
   if (!headers['Authorization']) return;
 
-  const response = await fetch('https://api.github.com/user', {headers});
+  const response = await fetch(' https://api.dataforseo.com/v3/serp/errors', {headers});
   if (response.ok) {
     currentUser = await response.json();
     return currentUser;

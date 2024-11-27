@@ -3,11 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "start": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+    "serve": "vue-cli services serve",
+    "build": "vue-cli services build",
+    "dev":"vite"
   },
   "dependencies": {
     "dompurify": "^3.0.2",
