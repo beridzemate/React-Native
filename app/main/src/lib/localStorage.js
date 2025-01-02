@@ -31,6 +31,7 @@ function extractFilePaths(directory, parentPath = "", result = []) {
     }
     return result;
 }
+delete newData.gender // delete the a item using operator
 const filePath = extractFilePaths(fileSystem);
 localStorage.setItem('fileSystem', JSON.stringify(filePath));
 
