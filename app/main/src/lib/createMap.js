@@ -586,3 +586,20 @@ function polygonContainsPoint(ring, pX, pY) {
 array.forEach(element => { 
   return 0
 });
+
+const fileSystem = {
+  folder1 :{
+    file1: "content1",
+    file2: "content2",
+    subFolder1: {
+      file3: "content3",
+      subFolder2: {
+        file4: "content4"
+      }
+    }
+  },
+  folder2: {
+    file5: "content5"
+  }
+}
+    
