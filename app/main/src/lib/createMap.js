@@ -602,4 +602,15 @@ const fileSystem = {
     file5: "content5"
   }
 }
-    
+
+function listFile(directory, parentPath = "") {
+  let fileList = [];
+
+  for (const key in directory) {
+    if (typeof directory[key] === "string") {
+      fileList.push(parentPath + key);
+    } else {
+      fileList.push(currentPath)
+    }
+  }
+}
