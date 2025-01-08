@@ -615,3 +615,23 @@ function listFile(directory, parentPath = "") {
   }
 }
 
+
+
+function mapFile(directory, parentPath = "") {
+  let fileList = [];
+
+  for (const key in directory) {
+    if (typeof directory[key] === "string") {
+      fileList.push(parentPath + key);
+    } else {
+      fileList.push(mapFile(directory[key], parentPath + key + "/"));
+    }
+  }
+  return fileList;
+} 
+
+function list (directory) {
+  return mapFile(directory).flat(Infinity);
+}
+
+console.log(list(fileSystem));
