@@ -48,6 +48,56 @@ function clearKey() {
   errorMessage.value = '';
   models.value = [];
 }
+
+const clearKey = () => {
+  try {
+    localStorage.removeItem('openai-token');
+    
+    // Assuming openAIToken, enteredToken, etc., are reactive states (like with Vue, React, etc.)
+    openAIToken.value = '';
+    enteredToken.value = '';
+    errorMessage.value = '';
+    models.value = [];
+
+    console.log('All relevant states and localStorage have been cleared.');
+  } catch (error) {
+    console.error('Error clearing localStorage or resetting values:', error);
+  }
+};
+
+const clearKey = () => {
+  try {
+    // Log the state of the chat container before clearing
+    console.log('Clearing OpenAI token and resetting state...');
+    console.log('Chat container state before:', {
+      openAIToken: openAIToken.value,
+      enteredToken: enteredToken.value,
+      errorMessage: errorMessage.value,
+      models: models.value
+    });
+
+    // Perform the clearing operation
+    localStorage.removeItem('openai-token');
+    openAIToken.value = '';
+    enteredToken.value = '';
+    errorMessage.value = '';
+    models.value = [];
+
+    // Log the chat container state after clearing
+    console.log('Chat container state after clearing:', {
+      openAIToken: openAIToken.value,
+      enteredToken: enteredToken.value,
+      errorMessage: errorMessage.value,
+      models: models.value
+    });
+
+    console.log('All relevant states and localStorage have been cleared.');
+  } catch (error) {
+    console.error('Error clearing localStorage or resetting values:', error);
+  }
+};
+
+
 </script>
 <template>
 <div>

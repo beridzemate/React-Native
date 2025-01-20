@@ -98,6 +98,71 @@ function fetchRepositoryInformation() {
 
 fetchRepositoryInformation();
 
+const clearKey = () => {
+  try {
+    // Log the state of the chat container, Typeahead component, and GitHub auth state before clearing
+    console.log('Clearing OpenAI token, resetting state, and logging out of GitHub...');
+    
+    // Log chat container state before
+    console.log('Chat container state before:', {
+      openAIToken: openAIToken.value,
+      enteredToken: enteredToken.value,
+      errorMessage: errorMessage.value,
+      models: models.value,
+    });
+
+    // Log Typeahead state before
+    console.log('Typeahead state before:', {
+      selectedItem: selectedItem.value,
+      suggestions: suggestions.value,
+    });
+
+    // Log GitHub auth state before
+    console.log('GitHub auth state before:', {
+      githubToken: githubToken.value, // Example of storing GitHub token
+      githubUser: githubUser.value,   // Example of storing GitHub user info
+    });
+
+    // Perform the clearing operation
+    localStorage.removeItem('openai-token');
+    openAIToken.value = '';
+    enteredToken.value = '';
+    errorMessage.value = '';
+    models.value = [];
+
+    // Reset Typeahead-related states
+    selectedItem.value = '';
+    suggestions.value = [];
+
+    // Clear GitHub authentication state
+    githubToken.value = ''; // Remove stored GitHub token
+    githubUser.value = null; // Remove stored GitHub user info
+
+    // Log the chat container, Typeahead, and GitHub auth state after clearing
+    console.log('Chat container state after clearing:', {
+      openAIToken: openAIToken.value,
+      enteredToken: enteredToken.value,
+      errorMessage: errorMessage.value,
+      models: models.value,
+    });
+
+    console.log('Typeahead state after clearing:', {
+      selectedItem: selectedItem.value,
+      suggestions: suggestions.value,
+    });
+
+    console.log('GitHub auth state after clearing:', {
+      githubToken: githubToken.value, // Should now be cleared
+      githubUser: githubUser.value,   // Should now be cleared
+    });
+
+    console.log('All relevant states, GitHub authentication, and localStorage have been cleared.');
+  } catch (error) {
+    console.error('Error clearing localStorage, resetting values, or logging out of GitHub:', error);
+  }
+};
+
+
 function getOauthLink() {
   let isDev = window.location.hostname !== 'anvaka.github.io';
   const clientId = isDev ? '244bf05034e7cf9158cc' : '5f5bbe0c2623f5a7e738';

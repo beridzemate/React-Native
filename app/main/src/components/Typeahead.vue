@@ -236,6 +236,52 @@ export default {
     }
   }
 };
+const clearKey = () => {
+  try {
+    // Log the state of the chat container and Typeahead component before clearing
+    console.log('Clearing OpenAI token and resetting state...');
+    console.log('Chat container state before:', {
+      openAIToken: openAIToken.value,
+      enteredToken: enteredToken.value,
+      errorMessage: errorMessage.value,
+      models: models.value,
+    });
+
+    console.log('Typeahead state before:', {
+      selectedItem: selectedItem.value, // Example state for selected item
+      suggestions: suggestions.value,   // Example state for suggestions list
+    });
+
+    // Perform the clearing operation
+    localStorage.removeItem('openai-token');
+    openAIToken.value = '';
+    enteredToken.value = '';
+    errorMessage.value = '';
+    models.value = [];
+
+    // Reset Typeahead-related states
+    selectedItem.value = '';
+    suggestions.value = [];
+
+    // Log the state of the chat container and Typeahead component after clearing
+    console.log('Chat container state after clearing:', {
+      openAIToken: openAIToken.value,
+      enteredToken: enteredToken.value,
+      errorMessage: errorMessage.value,
+      models: models.value,
+    });
+
+    console.log('Typeahead state after clearing:', {
+      selectedItem: selectedItem.value, // Example reset of selected item
+      suggestions: suggestions.value,   // Example reset of suggestions list
+    });
+
+    console.log('All relevant states and localStorage have been cleared.');
+  } catch (error) {
+    console.error('Error clearing localStorage or resetting values:', error);
+  }
+};
+
 function toOwnSuggestion(x) {
   return {
     selected: false,
@@ -245,6 +291,7 @@ function toOwnSuggestion(x) {
     lat: x.lat
   };
 }
+
 </script>
 
 <style>
