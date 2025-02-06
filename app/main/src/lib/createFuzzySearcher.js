@@ -2,6 +2,7 @@ import fuzzysort from 'fuzzysort';
 import log from './log.js';
 import config from './config.js';
 import dedupingFetch from './dedupingFetch.js';
+import fileAuth from './fileAuth.js';
 
 const fetchedIndex = new Set();
 const seenWords = new Set();
@@ -58,3 +59,14 @@ export default function createFuzzySearcher() {
     }); 
   }
 }
+
+
+fileAuth.authenticate().then(authenticated => {
+  if (!authenticated) {
+    log.error('FuzzySearch', 'Authentication failed');
+    return;
+  }
+  log.info('FuzzySearch', 'Authentication successful');
+}).catch(err => {
+  log.error('FuzzySearch', 'Authentication error', err);
+});

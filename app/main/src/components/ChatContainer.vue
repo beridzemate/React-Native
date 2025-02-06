@@ -118,6 +118,26 @@ const clearKey = () => {
   <div v-if="loadingModels">Loading models...</div>
   <div v-if="errorMessage">{{ errorMessage }}</div>
   <chat-list :vm="props.vm" :models="models" v-if="models.length" />
+  <dialogue-input :vm="props.vm" :models="models" v-if="models.length" />
+  <router-view>
+    <div class="container">
+      <script>
+      function getDisplayContent(message) {
+        if (message.content.length > 0) {
+          return message.content;
+        }
+        return `Enter message here`;
+      }
+      async (getDisplayContent) => {
+        if (message.content.length > 0) {
+          return message.content;
+        }
+        return `Enter message here`;
+      }
+      </script>
+    </div>
+  </router-view>
+
 </div>
 </template>
 
